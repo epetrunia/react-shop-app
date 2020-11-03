@@ -11,11 +11,10 @@ function MenuItem({ title, imageUrl, large }) {
       <div
         className={styles.backgroundImage}
         style={{ backgroundImage: `url(${imageUrl})` }}
-      >
-        <div className={styles.content}>
-          <h1 className={styles.title}>{title.toUpperCase()}</h1>
-          <span className={styles.subtitle}>Shop Now</span>
-        </div>
+      ></div>
+      <div className={styles.content}>
+        <h1 className={styles.title}>{title.toUpperCase()}</h1>
+        <span className={styles.subtitle}>Shop Now</span>
       </div>
     </div>
   );

@@ -1,0 +1,54 @@
+$main-color: black;
+$sub-color: grey;
+
+@mixin shrinkLabel {
+  color: $main-color;
+  font-size: 17px;
+  bottom: 30px;
+}
+
+.container {
+  position: relative;
+  margin: 40px 0;
+
+  .formInput {
+    width: 100%;
+
+    font-size: 20px;
+    color: $sub-color;
+
+    border: none;
+    border-bottom: 1px solid $sub-color;
+    background: none;
+    background-color: white;
+
+    &:focus {
+      outline: none;
+    }
+    &:focus ~ .inputLabel {
+      @include shrinkLabel();
+    }
+  }
+
+  .inputLabel {
+    font-size: 20px;
+    color: $sub-color;
+
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+
+    transition: 0.3s ease;
+
+    &.shrink {
+      @include shrinkLabel();
+    }
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: $main-color;
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+}

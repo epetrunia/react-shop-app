@@ -18,6 +18,9 @@ function Header() {
         <Link to='/contacts' className={styles.link}>
           contacts
         </Link>
+        <Link to='/signin' className={styles.link}>
+          sign in
+        </Link>
       </div>
     </div>
   );

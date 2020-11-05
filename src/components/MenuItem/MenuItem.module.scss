@@ -13,8 +13,6 @@
   overflow: hidden;
   cursor: pointer;
 
-  border: 1px solid black;
-
   &:hover .backgroundImage {
     transform: scale(1.1);
   }
@@ -24,7 +22,9 @@
     height: 100%;
 
     background-position: center;
+    padding: 0;
     background-size: cover;
+    background-repeat: no-repeat;
     transition: transform 0.8s ease-in-out;
   }
 

@@ -1,0 +1,22 @@
+.container {
+  height: 100%;
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  .bagIcon {
+    height: 30px;
+    width: 30px;
+  }
+
+  .count {
+    position: absolute;
+    bottom: 4px;
+
+    font-size: 13px;
+    font-weight: bold;
+  }
+}

@@ -1,9 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ReactComponent as Logo } from './../../assets/crown.svg';
-import styles from './Header.module.scss';
-import { auth } from '../../firebase/utils';
 import { connect } from 'react-redux';
+
+import styles from './Header.module.scss';
+import { ReactComponent as Logo } from './../../assets/crown.svg';
+import { auth } from '../../firebase/utils';
+import CardIcon from './../CardIcon';
 
 function Header({ currentUser }) {
   return (
@@ -29,6 +31,7 @@ function Header({ currentUser }) {
             sign in
           </Link>
         )}
+        <CardIcon />
       </div>
     </div>
   );

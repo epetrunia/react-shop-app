@@ -31,4 +31,16 @@
       background-color: #2d6cd1;
     }
   }
+
+  &.inverted {
+    background-color: white;
+    color: black;
+    outline: 1px solid black;
+
+    &:hover {
+      background-color: black;
+      color: white;
+      border: none;
+    }
+  }
 }

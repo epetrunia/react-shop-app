@@ -1,18 +1,41 @@
 .container {
-  height: 370px;
-  width: 22vw;
+  height: 450px;
+  width: 22%;
 
   margin-bottom: 15px;
 
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  &:hover {
+    .background {
+      opacity: 0.8;
+    }
+
+    .btn {
+      display: flex;
+      opacity: 0.9;
+    }
+  }
 
   .background {
     width: 100%;
     height: 90%;
     background-size: cover;
     background-position: center;
+  }
+
+  .btn {
+    width: 80%;
+    position: absolute;
+    bottom: 70px;
+    display: none;
+
+    button {
+      width: 100%;
+    }
   }
 
   .footer {

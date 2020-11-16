@@ -1,6 +1,6 @@
 .container {
-  height: 360px;
-  width: 240px;
+  height: 380px;
+  width: 260px;
   padding: 20px;
 
   position: absolute;
@@ -14,7 +14,7 @@
   background-color: white;
   border: 1px solid black;
   z-index: 1;
-  overflow: scroll;
+  overflow-y: scroll;
   .item {
     height: 240px;
 

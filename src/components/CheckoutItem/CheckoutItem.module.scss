@@ -26,6 +26,18 @@
     width: 23%;
   }
 
+  .quantity {
+    display: flex;
+
+    .arrow {
+      cursor: pointer;
+    }
+
+    .value {
+      padding: 0 10px;
+    }
+  }
+
   .removeBtn {
     width: 8%;
 

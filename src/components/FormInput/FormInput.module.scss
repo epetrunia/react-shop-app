@@ -39,6 +39,7 @@ $sub-color: grey;
     bottom: 5px;
 
     transition: 0.3s ease;
+    pointer-events: none;
 
     &.shrink {
       @include shrinkLabel();

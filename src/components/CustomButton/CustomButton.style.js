@@ -8,7 +8,7 @@ const ButtonMainStyles = css`
   &:hover {
     background-color: white;
     color: black;
-    border: 1px solid black;
+    outline: 1px solid black;
   }
 `;
 

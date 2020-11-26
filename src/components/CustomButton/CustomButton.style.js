@@ -48,10 +48,15 @@ export const CustomButtonContainer = styled.button`
 
   font-size: 18px;
 
+  display: flex;
+  justify-content: center;
+
   font-family: 'Open Sans Condensed', sans-serif;
   text-transform: uppercase;
+  text-align: canter;
   line-height: 50px;
   letter-spacing: 0.5px;
+  outline: none;
 
   cursor: pointer;
 

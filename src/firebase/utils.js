@@ -13,6 +13,8 @@ const config = {
   measurementId: 'G-Q4GTZ8X8NJ',
 };
 
+firebase.initializeApp(config);
+
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) return;
 
@@ -23,7 +25,6 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!snapShot.exists) {
     const { displayName, email } = userAuth;
     const createdAt = new Date();
-
     try {
       await userRef.set({
         displayName,
@@ -35,6 +36,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
       console.log('error creating user', error.message);
     }
   }
+
   return userRef;
 };
 
@@ -49,6 +51,7 @@ export const addCollectionAndDocuments = async (
     const newDocRef = collectionRef.doc();
     batch.set(newDocRef, obj);
   });
+
   return await batch.commit();
 };
 
@@ -63,10 +66,12 @@ export const convertCollectionsSnapshotToMap = (collections) => {
       items,
     };
   });
-  console.log(transformedCollection);
-};
 
-firebase.initializeApp(config);
+  return transformedCollection.reduce((accumulator, collection) => {
+    accumulator[collection.title.toLowerCase()] = collection;
+    return accumulator;
+  }, {});
+};
 
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();

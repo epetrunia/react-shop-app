@@ -5,7 +5,13 @@ import { createStructuredSelector } from 'reselect';
 import CheckoutItem from './../../components/CheckoutItem';
 import StripeButton from './../../components/StripeButton';
 
-import styles from './Checkout.module.scss';
+import {
+  CheckoutContainer,
+  HeaderContainer,
+  HeaderBlock,
+  Total,
+  Warning,
+} from './Checkout.style';
 import {
   selectCartItems,
   selectCartItemsTotal,
@@ -13,37 +19,37 @@ import {
 
 function Checkout({ cartItems, total }) {
   return (
-    <div className={styles.page}>
-      <div className={styles.header}>
-        <div className={styles.block}>
+    <CheckoutContainer>
+      <HeaderContainer>
+        <HeaderBlock>
           <span>Product</span>
-        </div>
-        <div className={styles.block}>
+        </HeaderBlock>
+        <HeaderBlock>
           <span>Description</span>
-        </div>
-        <div className={styles.block}>
+        </HeaderBlock>
+        <HeaderBlock>
           <span>Quantity</span>
-        </div>
-        <div className={styles.block}>
+        </HeaderBlock>
+        <HeaderBlock>
           <span>Price</span>
-        </div>
-        <div className={styles.block}>
+        </HeaderBlock>
+        <HeaderBlock>
           <span>Remove</span>
-        </div>
-      </div>
+        </HeaderBlock>
+      </HeaderContainer>
       {cartItems.map((cartItem) => (
         <CheckoutItem key={cartItem.id} cartItem={cartItem} />
       ))}
-      <div className={styles.total}>
+      <Total>
         <span>Total: {total}$</span>
-      </div>
-      <div className={styles.warning}>
+      </Total>
+      <Warning>
         Please use the following test credit card for payments
         <br />
         Card number: 5555 5555 5555 4444, exp: 01/23, CVV: 123
-      </div>
+      </Warning>
       <StripeButton price={total} />
-    </div>
+    </CheckoutContainer>
   );
 }
 

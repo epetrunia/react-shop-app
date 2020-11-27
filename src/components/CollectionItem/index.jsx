@@ -16,7 +16,10 @@ function CollectionItem({ item, addItem }) {
   const { name, price, imageUrl } = item;
   return (
     <CollectionItemContainer>
-      <BackgroundWrapper imageUrl={imageUrl}></BackgroundWrapper>
+      <BackgroundWrapper
+        className='image'
+        imageUrl={imageUrl}
+      ></BackgroundWrapper>
       <Footer>
         <FooterName>{name}</FooterName>
         <FooterPrice>{price}$</FooterPrice>

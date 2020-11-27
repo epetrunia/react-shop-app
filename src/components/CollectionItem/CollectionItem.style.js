@@ -13,7 +13,7 @@ flex-direction: column;
 align-items: center;
 
 &:hover {
-  .background {
+  .image {
     opacity: 0.8;
   }
 

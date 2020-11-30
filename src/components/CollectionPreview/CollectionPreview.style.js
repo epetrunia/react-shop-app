@@ -9,6 +9,11 @@ export const CollectionPreviewContainer = styled.div`
   h1 {
     font-size: 30px;
     margin-bottom: 25px;
+
+    :hover {
+      color: grey;
+      cursor: pointer;
+    }
   }
 
   div {

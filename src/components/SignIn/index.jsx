@@ -5,8 +5,10 @@ import { SignInContainer, SignInTitle, ButtonsContainer } from './SignIn.style';
 
 import FormInput from './../FormInput';
 import CustomButton from './../CustomButton';
-import { auth } from '../../firebase/utils';
-import { googleSignInStart } from './../../redux/user/actions';
+import {
+  googleSignInStart,
+  emailSignInStart,
+} from './../../redux/user/actions';
 
 class SignIn extends Component {
   constructor() {
@@ -22,6 +24,9 @@ class SignIn extends Component {
     event.preventDefault();
 
     const { email, password } = this.state;
+    const { emailSignInStart } = this.props;
+
+    emailSignInStart(email, password);
   };
 
   handleChange = (event) => {
@@ -71,6 +76,8 @@ class SignIn extends Component {
 
 const mapDispatchToProps = (dispatch) => ({
   googleSignInStart: () => dispatch(googleSignInStart()),
+  emailSignInStart: (email, password) =>
+    dispatch(emailSignInStart({ email, password })),
 });
 
 export default connect(null, mapDispatchToProps)(SignIn);

@@ -45,6 +45,7 @@ class App extends Component {
     return (
       <>
         <Header />
+        <h1>test</h1>
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path='/shop' component={Shop} />

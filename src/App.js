@@ -10,7 +10,6 @@ import SignInSignUp from './pages/SignInSignUp';
 import Header from './components/Header';
 import Checkout from './pages/Checkout';
 
-import { auth, createUserProfileDocument } from './firebase/utils';
 import { setCurrentUser } from './redux/user/actions';
 import { selectCurrentUser } from './redux/user/selectors';
 
@@ -20,7 +19,7 @@ class App extends Component {
   componentDidMount() {
     const { setCurrentUser } = this.props;
 
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
+    /*this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
 
@@ -33,7 +32,7 @@ class App extends Component {
       } else {
         setCurrentUser(userAuth);
       }
-    });
+    });*/
   }
 
   componentWillUnmount() {
@@ -45,7 +44,6 @@ class App extends Component {
     return (
       <>
         <Header />
-        <h1>test</h1>
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path='/shop' component={Shop} />

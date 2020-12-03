@@ -8,12 +8,12 @@ import {
 function FormInput({ label, handleChange, ...props }) {
   return (
     <GroupContainer>
-      <FormInputContainer
-        className={props.value.length ? 'shrink' : ''}
-        onChange={handleChange}
-        {...props}
-      />
-      {label ? <InputLabel>{label}</InputLabel> : null}
+      <FormInputContainer onChange={handleChange} {...props} />
+      {label ? (
+        <InputLabel className={props.value.length ? 'shrink' : ''}>
+          {label}
+        </InputLabel>
+      ) : null}
     </GroupContainer>
   );
 }

@@ -10,7 +10,6 @@ import {
 } from './Header.style';
 
 import { ReactComponent as Logo } from './../../assets/crown.svg';
-import { auth } from '../../firebase/utils';
 import { selectCartHidden } from './../../redux/cart/selectors';
 import { selectCurrentUser } from './../../redux/user/selectors';
 import { signOutStart } from './../../redux/user/actions';
